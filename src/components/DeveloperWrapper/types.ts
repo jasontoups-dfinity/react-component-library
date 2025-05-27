@@ -32,7 +32,8 @@ export interface DeveloperPanelProps {
   onClose: () => void;
   position: DeveloperPanelPosition;
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
+  headerRef?: React.RefObject<HTMLElement | null>;
 }
 
 export interface StateInspectorProps {

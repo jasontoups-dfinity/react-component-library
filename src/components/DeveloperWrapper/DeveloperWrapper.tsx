@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import type { DeveloperWrapperProps } from './types';
 import { useDeveloper } from '../../lib/DeveloperContext';
 import DeveloperHeader from './DeveloperHeader';
@@ -54,6 +54,9 @@ const DeveloperWrapper: React.FC<DeveloperWrapperProps> = ({
     }
   };
 
+  // Create a ref for the header element
+  const headerRef = useRef<HTMLElement | null>(null);
+
   return (
     <div className="developer-wrapper flex flex-col ">
       <DeveloperHeader
@@ -62,6 +65,7 @@ const DeveloperWrapper: React.FC<DeveloperWrapperProps> = ({
         showLayoutControls={showLayoutControls}
         showThemeToggle={showThemeToggle}
         className={headerClassName}
+        ref={headerRef}
       />
 
       {children}
@@ -70,7 +74,8 @@ const DeveloperWrapper: React.FC<DeveloperWrapperProps> = ({
           isOpen={isPanelOpen}
           onClose={() => setActivePanel(null)}
           position={position}
-          className={panelClassName}>
+          className={panelClassName}
+          headerRef={headerRef}>
           {renderPanelContent()}
         </DeveloperPanel>
       )}

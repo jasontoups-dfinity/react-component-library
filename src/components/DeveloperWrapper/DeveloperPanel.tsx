@@ -15,7 +15,10 @@ const DeveloperPanel: React.FC<DeveloperPanelProps> = ({
   position,
   className,
   children,
+  headerRef,
 }) => {
+  // State to track the header height
+  const [headerHeight, setHeaderHeight] = useState(78); // Default fallback height
   // State for panel size
   const [size, setSize] = useState(defaultSizes[position]);
   const [isResizing, setIsResizing] = useState(false);
@@ -85,6 +88,33 @@ const DeveloperPanel: React.FC<DeveloperPanelProps> = ({
     };
   }, [handleResize, handleResizeEnd]);
 
+  // Effect to measure the header height when component mounts or headerRef changes
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef?.current) {
+        const height = headerRef.current.getBoundingClientRect().height;
+        setHeaderHeight(height);
+      }
+    };
+
+    // Initial measurement
+    updateHeaderHeight();
+
+    // Set up resize observer to update on header size changes
+    const resizeObserver = new ResizeObserver(updateHeaderHeight);
+    if (headerRef?.current) {
+      resizeObserver.observe(headerRef.current);
+    }
+
+    // Clean up observer on unmount
+    return () => {
+      if (headerRef?.current) {
+        resizeObserver.unobserve(headerRef.current);
+      }
+      resizeObserver.disconnect();
+    };
+  }, [headerRef]);
+
   // Early return if panel is not open
   if (!isOpen) return null;
 
@@ -93,15 +123,15 @@ const DeveloperPanel: React.FC<DeveloperPanelProps> = ({
     if (position === 'right') {
       return {
         right: 0,
-        top: 0,
-        height: '100%',
+        top: headerHeight,
+        height: `calc(100% - ${headerHeight}px)`,
         width: `${size}px`,
       };
     } else if (position === 'left') {
       return {
         left: 0,
-        top: 0,
-        height: '100%',
+        top: headerHeight,
+        height: `calc(100% - ${headerHeight}px)`,
         width: `${size}px`,
       };
     } else {
