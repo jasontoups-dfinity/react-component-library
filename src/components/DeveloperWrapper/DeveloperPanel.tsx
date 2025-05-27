@@ -1,13 +1,7 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import type { DeveloperPanelProps } from './types';
 import { cn } from '../../lib/utils';
-
-// Default sizes for different positions
-const defaultSizes = {
-  right: 320, // 20rem (w-80)
-  left: 320,
-  bottom: 256, // 16rem (h-64)
-};
+import { useDeveloper } from '../../lib/DeveloperContext';
 
 const DeveloperPanel: React.FC<DeveloperPanelProps> = ({
   isOpen,
@@ -17,20 +11,33 @@ const DeveloperPanel: React.FC<DeveloperPanelProps> = ({
   children,
   headerRef,
 }) => {
+  const { panelSizes, setPanelSize } = useDeveloper();
+
   // State to track the header height
   const [headerHeight, setHeaderHeight] = useState(78); // Default fallback height
   // State for panel size
-  const [size, setSize] = useState(defaultSizes[position]);
+  const [size, setSize] = useState(panelSizes[position]);
   const [isResizing, setIsResizing] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const startPosRef = useRef(0);
   const startSizeRef = useRef(0);
+  const currentSizeRef = useRef(panelSizes[position]); // Ref to track the current size
 
-  // Handle mouse move during resize
-  const handleResize = useCallback(
-    (e: MouseEvent) => {
-      if (!isResizing) return;
+  // Handle mouse down on resize handle
+  const handleResizeStart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
 
+    // Store starting position and size
+    if (position === 'bottom') {
+      startPosRef.current = e.clientY;
+    } else {
+      startPosRef.current = e.clientX;
+    }
+    startSizeRef.current = size;
+
+    // Define the resize handler
+    const handleMouseMove = (e: MouseEvent) => {
       let newSize;
       if (position === 'bottom') {
         // For bottom panel, resize vertically (invert direction)
@@ -47,46 +54,33 @@ const DeveloperPanel: React.FC<DeveloperPanelProps> = ({
       newSize = Math.max(newSize, 200); // Minimum size
       newSize = Math.min(newSize, position === 'bottom' ? 600 : 800); // Maximum size
 
+      // Update both the state and the ref
       setSize(newSize);
-    },
-    [isResizing, position]
-  );
-
-  // Handle mouse up to end resize
-  const handleResizeEnd = useCallback(() => {
-    setIsResizing(false);
-    document.removeEventListener('mousemove', handleResize);
-    document.removeEventListener('mouseup', handleResizeEnd);
-  }, [handleResize]);
-
-  // Handle mouse down on resize handle
-  const handleResizeStart = useCallback(
-    (e: React.MouseEvent) => {
-      e.preventDefault();
-      setIsResizing(true);
-
-      // Store starting position and size
-      if (position === 'bottom') {
-        startPosRef.current = e.clientY;
-      } else {
-        startPosRef.current = e.clientX;
-      }
-      startSizeRef.current = size;
-
-      // Add event listeners for resize
-      document.addEventListener('mousemove', handleResize);
-      document.addEventListener('mouseup', handleResizeEnd);
-    },
-    [position, size, handleResize, handleResizeEnd]
-  );
-
-  // Clean up event listeners on unmount or when dependencies change
-  useEffect(() => {
-    return () => {
-      document.removeEventListener('mousemove', handleResize);
-      document.removeEventListener('mouseup', handleResizeEnd);
+      currentSizeRef.current = newSize;
     };
-  }, [handleResize, handleResizeEnd]);
+
+    // Define the resize end handler
+    const handleMouseUp = () => {
+      setIsResizing(false);
+      // Save the current size to the context using the ref value
+      // which is guaranteed to be the latest value
+      setPanelSize(position, currentSizeRef.current);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    // Add event listeners for resize
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
+  // No need for cleanup effect since we're removing event listeners in the handleMouseUp function
+
+  // Update local size state when position changes or panel sizes are updated in context
+  useEffect(() => {
+    setSize(panelSizes[position]);
+    currentSizeRef.current = panelSizes[position];
+  }, [position, panelSizes]);
 
   // Effect to measure the header height when component mounts or headerRef changes
   useEffect(() => {

@@ -16,6 +16,11 @@ interface DeveloperContextState {
     networkMonitor: boolean;
   };
   stores: Record<string, unknown>;
+  panelSizes: {
+    right: number;
+    left: number;
+    bottom: number;
+  };
 }
 
 interface DeveloperContextValue extends DeveloperContextState {
@@ -25,6 +30,7 @@ interface DeveloperContextValue extends DeveloperContextState {
   setEnabledTools: (tools: Partial<DeveloperContextState['enabledTools']>) => void;
   registerStore: (name: string, store: unknown) => void;
   unregisterStore: (name: string) => void;
+  setPanelSize: (position: DeveloperPanelPosition, size: number) => void;
 }
 
 // Create the context with a default undefined value
@@ -64,6 +70,11 @@ export const DeveloperProvider: React.FC<DeveloperProviderProps> = ({
       networkMonitor: initialEnabledTools.networkMonitor ?? true,
     },
     stores: initialStores,
+    panelSizes: {
+      right: 320, // Default sizes
+      left: 320,
+      bottom: 256,
+    },
   });
 
   // Function to set the active panel
@@ -125,6 +136,17 @@ export const DeveloperProvider: React.FC<DeveloperProviderProps> = ({
     });
   };
 
+  // Function to set the panel size for a specific position
+  const setPanelSize = (position: DeveloperPanelPosition, size: number) => {
+    setState((prev) => ({
+      ...prev,
+      panelSizes: {
+        ...prev.panelSizes,
+        [position]: size,
+      },
+    }));
+  };
+
   // Create the context value
   const contextValue: DeveloperContextValue = {
     ...state,
@@ -134,6 +156,7 @@ export const DeveloperProvider: React.FC<DeveloperProviderProps> = ({
     setEnabledTools,
     registerStore,
     unregisterStore,
+    setPanelSize,
   };
 
   return <DeveloperContext.Provider value={contextValue}>{children}</DeveloperContext.Provider>;
