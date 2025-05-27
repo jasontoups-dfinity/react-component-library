@@ -1,6 +1,6 @@
-# Active Context: React Playground
+# Active Context: React Component Library
 
-This document captures the current state, recent changes, and active development focus of the React Playground template.
+This document captures the current state, recent changes, and active development focus of the React Component Library template.
 
 ## Current Focus
 
@@ -81,7 +81,10 @@ We've implemented a solution for managing browser titles:
      return {
        name: 'html-transform',
        transformIndexHtml(html: string) {
-         return html.replace(/<title>(.*?)<\/title>/, '<title>React Playground | DFINITY</title>');
+         return html.replace(
+           /<title>(.*?)<\/title>/,
+           '<title>React Component Library | DFINITY</title>'
+         );
        },
      };
    };
@@ -264,7 +267,7 @@ We're configuring the project as a GitHub Template with:
 - **2025-05-21**: Added documentation links to technology logos on the homepage
 - **2025-05-21**: Updated .clinerules with Testing Responsibility section
 - **2025-05-21**: Added hover scale animation to technology logos on the homepage (icons only)
-- **2025-05-21**: Added home link to the React Playground header
+- **2025-05-21**: Added home link to the React Component Library header
 - **2025-05-21**: Implemented light/dark theme toggle in the header
 - **2025-05-21**: Refined theme implementation with proper CSS variables and theme-aware styling
 - **2025-05-21**: Fixed theme toggle by removing duplicate styles from index.css
@@ -341,7 +344,7 @@ We've implemented a new feature that allows developers to preview pages at diffe
   - Wrap all routes with the LayoutWrapper component
   - Modify existing page components to work within the new layout structure
 
-This feature will make it easier to develop and test responsive designs within the React Playground.
+This feature will make it easier to develop and test responsive designs within the React Component Library.
 
 ## Implemented Feature: Developer Wrapper
 
@@ -402,7 +405,7 @@ This feature provides a powerful set of tools for developers to debug and monito
 
 ## Implemented Feature: AI Integration
 
-We've implemented AI integration with LLM providers to enable AI-powered analysis and assistance in the React Playground.
+We've implemented AI integration with LLM providers to enable AI-powered analysis and assistance in the React Component Library.
 
 ### Feature Overview
 

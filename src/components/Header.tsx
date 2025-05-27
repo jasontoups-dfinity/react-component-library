@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         <span className="font-bold text-base leading-tight flex flex-col justify-center">
           REACT
           <br />
-          PLAYGROUND
+          COMPONENT LIBRARY
         </span>
       </Link>
     </header>

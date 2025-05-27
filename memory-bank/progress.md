@@ -1,6 +1,6 @@
-# Progress Tracker: React Playground
+# Progress Tracker: React Component Library
 
-This document tracks the development progress of the React Playground template, highlighting what has been completed, what's in progress, and what remains to be done.
+This document tracks the development progress of the React Component Library template, highlighting what has been completed, what's in progress, and what remains to be done.
 
 ## Completed Features
 
@@ -193,7 +193,7 @@ This document tracks the development progress of the React Playground template, 
 - **2025-05-21**: Added documentation links to technology logos on the homepage
 - **2025-05-21**: Updated .clinerules with Testing Responsibility section
 - **2025-05-21**: Added hover scale animation to technology logos on the homepage (icons only)
-- **2025-05-21**: Added home link to the React Playground header
+- **2025-05-21**: Added home link to the React Component Library header
 - **2025-05-21**: Implemented light/dark theme toggle in the header
 - **2025-05-21**: Refined theme implementation with proper CSS variables and theme-aware styling
 - **2025-05-21**: Fixed theme toggle by removing duplicate styles from index.css

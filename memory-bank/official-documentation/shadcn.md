@@ -1,6 +1,6 @@
 # ShadCN UI Documentation
 
-This document contains key information about ShadCN UI, focusing on the most important aspects for our React Playground template.
+This document contains key information about ShadCN UI, focusing on the most important aspects for our React Component Library template.
 
 ## What is ShadCN UI?
 
@@ -406,4 +406,4 @@ src/
 - [Radix UI Documentation](https://www.radix-ui.com/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
-This documentation provides a quick reference for ShadCN UI components and patterns that are most relevant to our React Playground template.
+This documentation provides a quick reference for ShadCN UI components and patterns that are most relevant to our React Component Library template.

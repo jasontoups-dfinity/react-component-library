@@ -1,6 +1,6 @@
-# Technical Context: React Playground
+# Technical Context: React Component Library
 
-This document provides detailed information about the technologies, tools, and technical setup of the React Playground template.
+This document provides detailed information about the technologies, tools, and technical setup of the React Component Library template.
 
 ## Technology Stack
 
@@ -250,4 +250,4 @@ The template targets modern browsers:
 2. React 19 requires modern JavaScript engines
 3. The template is designed for client-side rendering only
 
-This technical context provides the foundation for understanding the React Playground template's implementation details and technical decisions.
+This technical context provides the foundation for understanding the React Component Library template's implementation details and technical decisions.

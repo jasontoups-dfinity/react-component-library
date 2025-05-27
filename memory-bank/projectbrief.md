@@ -1,8 +1,8 @@
-# Project Brief: React Playground
+# Project Brief: React Component Library
 
 ## Project Purpose
 
-This React Playground serves as a GitHub Template for our organization, enabling teams to rapidly prototype ideas in React using the latest versions of Tailwind CSS and ShadCN UI components. It provides a clean, modern starting point for building and iterating on new concepts without the complexity and dependencies of our production applications.
+This React Component Library serves as a GitHub Template for our organization, enabling teams to rapidly prototype ideas in React using the latest versions of Tailwind CSS and ShadCN UI components. It provides a clean, modern starting point for building and iterating on new concepts without the complexity and dependencies of our production applications.
 
 ## Core Requirements
 
@@ -61,4 +61,4 @@ This React Playground serves as a GitHub Template for our organization, enabling
 - Complex state management
 - Performance optimization for large-scale applications
 
-This project brief serves as the foundation for our React Playground GitHub Template, guiding all development decisions and ensuring the template meets the needs of our organization's teams.
+This project brief serves as the foundation for our React Component Library GitHub Template, guiding all development decisions and ensuring the template meets the needs of our organization's teams.

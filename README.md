@@ -1,12 +1,12 @@
-# React Playground
+# React Component Library
 
 A modern, feature-rich GitHub template for rapidly prototyping React applications with the latest technologies.
 
-![React Playground](public/dfinity-logo.svg)
+![React Component Library](public/dfinity-logo.svg)
 
 ## Overview
 
-React Playground is a carefully crafted GitHub template designed to help us quickly prototype and experiment with React applications. Built with the latest technologies including React 19, TypeScript, Tailwind CSS v4, and ShadCN UI components, it provides a clean, modern starting point without the complexity of production applications.
+React Component Library is a carefully crafted GitHub template designed to help us quickly prototype and experiment with React applications. Built with the latest technologies including React 19, TypeScript, Tailwind CSS v4, and ShadCN UI components, it provides a clean, modern starting point without the complexity of production applications.
 
 ## Features
 
@@ -87,7 +87,7 @@ npx shadcn-ui@latest add dialog
 
 ## Developer Tools
 
-The React Playground includes a comprehensive Developer Wrapper component that provides a suite of tools to help with development and debugging:
+The React Component Library includes a comprehensive Developer Wrapper component that provides a suite of tools to help with development and debugging:
 
 ### Developer Wrapper Features
 
@@ -115,7 +115,7 @@ For more details on using and customizing the Developer Wrapper, see the [Develo
 
 ### Page Width Control
 
-The React Playground includes a powerful feature for testing responsive designs across different device widths. In the header, you'll find a "Layout" dropdown menu that allows you to instantly switch between different device width presets:
+The React Component Library includes a powerful feature for testing responsive designs across different device widths. In the header, you'll find a "Layout" dropdown menu that allows you to instantly switch between different device width presets:
 
 - **Full Width**: Uses 100% of the browser viewport width
 - **Desktop**: Constrains content to ~1152px (Tailwind's max-w-6xl)

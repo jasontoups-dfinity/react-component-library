@@ -20,7 +20,7 @@ const StateInspector: React.FC<StateInspectorProps> = ({ className }) => {
       id: '2',
       name: 'Header',
       state: { isMenuOpen: false },
-      props: { title: 'React Playground' },
+      props: { title: 'React Component Library' },
       parent: '1',
       children: [],
     },

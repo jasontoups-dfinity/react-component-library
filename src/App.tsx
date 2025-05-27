@@ -26,7 +26,7 @@ function App() {
             }}>
             <Router>
               <DeveloperWrapper
-                appName="React Playground"
+                appName="React Component Library"
                 logo={dfinityLogo}
                 showLayoutControls={true}
                 showThemeToggle={true}>

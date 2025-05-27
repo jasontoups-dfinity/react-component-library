@@ -18,7 +18,7 @@ A customizable wrapper component that provides developer tools for React applica
 
 ## Installation
 
-The Developer Wrapper is included in the React Playground template. To use it in other projects, copy the following files:
+The Developer Wrapper is included in the React Component Library template. To use it in other projects, copy the following files:
 
 - `src/components/DeveloperWrapper/` directory
 - `src/lib/DeveloperContext.tsx`

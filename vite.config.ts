@@ -8,7 +8,10 @@ const htmlPlugin = () => {
   return {
     name: 'html-transform',
     transformIndexHtml(html: string) {
-      return html.replace(/<title>(.*?)<\/title>/, '<title>React Playground | DFINITY</title>');
+      return html.replace(
+        /<title>(.*?)<\/title>/,
+        '<title>React Component Library | DFINITY</title>'
+      );
     },
   };
 };

@@ -1,10 +1,10 @@
-# System Patterns: React Playground
+# System Patterns: React Component Library
 
-This document outlines the architectural patterns, design decisions, and system organization of the React Playground template.
+This document outlines the architectural patterns, design decisions, and system organization of the React Component Library template.
 
 ## Architecture Overview
 
-The React Playground is built on a modern frontend stack:
+The React Component Library is built on a modern frontend stack:
 
 ```mermaid
 graph TD
@@ -60,7 +60,7 @@ src/
 
 ## State Management
 
-The React Playground uses a simple and pragmatic approach to state management:
+The React Component Library uses a simple and pragmatic approach to state management:
 
 1. **Component State**: Local state using React's `useState` and `useReducer` hooks
 2. **Context API**: For sharing state between related components
