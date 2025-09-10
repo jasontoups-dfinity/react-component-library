@@ -29,7 +29,7 @@ const Main: React.FC = () => {
 
   return (
     <ContentContainer>
-      <h1 className="text-4xl font-bold mb-3">React Playground</h1>
+      <h1 className="text-4xl font-bold mb-3">React Component Library</h1>
       <p className="text-xl mb-10">Build something quickly.™️</p>
 
       <div className="mb-12">

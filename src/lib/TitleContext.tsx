@@ -12,7 +12,7 @@ const TitleContext = createContext<TitleContextType>({
 
 export const TitleProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [pageTitle, setPageTitle] = useState('');
-  const baseTitle = 'React Playground | DFINITY';
+  const baseTitle = 'React Component Library | DFINITY';
 
   useEffect(() => {
     // Special case for homepage

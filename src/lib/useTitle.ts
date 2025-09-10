@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 /**
  * A custom hook to update the document title
  * @param title The title to set for the current page
- * @param suffix An optional suffix to append to the title (default: "React Playground | DFINITY")
+ * @param suffix An optional suffix to append to the title (default: "React Component Library | DFINITY")
  */
-export function useTitle(title: string, suffix: string = 'React Playground | DFINITY') {
+export function useTitle(title: string, suffix: string = 'React Component Library | DFINITY') {
   useEffect(() => {
     // Save the previous title
     const previousTitle = document.title;

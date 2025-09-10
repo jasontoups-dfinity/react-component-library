@@ -5,7 +5,7 @@ import './globals.css'; // Import globals.css for theme variables and styles
 import App from './App.tsx';
 
 // Set the document title
-document.title = 'React Playground | DFINITY';
+document.title = 'React Component Library | DFINITY';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

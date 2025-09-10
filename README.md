@@ -1,12 +1,12 @@
-# React Playground
+# React Component Library
 
 A modern, feature-rich GitHub template for rapidly prototyping React applications with the latest technologies.
 
-![React Playground](public/dfinity-logo.svg)
+![React Component Library](public/dfinity-logo.svg)
 
 ## Overview
 
-React Playground is a carefully crafted GitHub template designed to help us quickly prototype and experiment with React applications. Built with the latest technologies including React 19, TypeScript, Tailwind CSS v4, and ShadCN UI components, it provides a clean, modern starting point without the complexity of production applications.
+React Component Library is a carefully crafted GitHub template designed to help us quickly prototype and experiment with React applications. Built with the latest technologies including React 19, TypeScript, Tailwind CSS v4, and ShadCN UI components, it provides a clean, modern starting point without the complexity of production applications.
 
 ## Features
 
@@ -21,6 +21,7 @@ React Playground is a carefully crafted GitHub template designed to help us quic
 
 ### Key Features
 
+- ✅ **Developer Tools** - Comprehensive developer wrapper with state inspection, performance monitoring, and more
 - ✅ **Responsive Design Testing** - Built-in developer tools for testing responsive layouts across device sizes
 - ✅ **Page Width Control** - Interactive device width simulator with preset breakpoints for different screen sizes
 - ✅ **Dark/Light Mode** - Built-in theme toggle with system preference detection
@@ -84,11 +85,37 @@ npx shadcn-ui@latest add [component-name]
 npx shadcn-ui@latest add dialog
 ```
 
+## Developer Tools
+
+The React Component Library includes a comprehensive Developer Wrapper component that provides a suite of tools to help with development and debugging:
+
+### Developer Wrapper Features
+
+- **State Inspector**: View component state in real-time
+- **Store Inspector**: Monitor global state stores (Redux, Zustand, etc.)
+- **Performance Monitor**: Track component render times and re-renders
+- **Network Monitor**: Monitor API requests and responses
+- **Environment Variable Control**: Enable/disable based on environment
+
+### Using the Developer Wrapper
+
+The Developer Wrapper is enabled by default in development mode. You can toggle the different tool panels using the buttons in the header. The wrapper can be enabled or disabled using the `USE_DEVELOPER_TOOLS` environment variable:
+
+```bash
+# Enable developer tools
+USE_DEVELOPER_TOOLS=true npm run dev
+
+# Disable developer tools
+USE_DEVELOPER_TOOLS=false npm run dev
+```
+
+For more details on using and customizing the Developer Wrapper, see the [Developer Wrapper documentation](src/components/DeveloperWrapper/README.md).
+
 ## Responsive Design Testing
 
 ### Page Width Control
 
-The React Playground includes a powerful feature for testing responsive designs across different device widths. In the header, you'll find a "Layout" dropdown menu that allows you to instantly switch between different device width presets:
+The React Component Library includes a powerful feature for testing responsive designs across different device widths. In the header, you'll find a "Layout" dropdown menu that allows you to instantly switch between different device width presets:
 
 - **Full Width**: Uses 100% of the browser viewport width
 - **Desktop**: Constrains content to ~1152px (Tailwind's max-w-6xl)

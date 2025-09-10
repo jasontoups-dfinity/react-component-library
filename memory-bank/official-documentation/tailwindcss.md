@@ -1,6 +1,6 @@
 # Tailwind CSS v4 Official Documentation
 
-This document contains key information from the official Tailwind CSS v4 documentation, focusing on the most important aspects for our React Playground template.
+This document contains key information from the official Tailwind CSS v4 documentation, focusing on the most important aspects for our React Component Library template.
 
 ## Installation
 
@@ -254,4 +254,4 @@ theme: {
 - [Tailwind Play](https://play.tailwindcss.com/)
 - [Tailwind CSS GitHub](https://github.com/tailwindlabs/tailwindcss)
 
-This documentation provides a quick reference for Tailwind CSS v4 features and changes that are most relevant to our React Playground template.
+This documentation provides a quick reference for Tailwind CSS v4 features and changes that are most relevant to our React Component Library template.
